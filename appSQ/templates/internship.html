@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container1{
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../images/gas-station-921597.jpg');
+
+        background-position: center;
+        background-size: cover;
+        padding-left: 5%;
+        padding-right: 5%;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .navbar{
+        width: 100%;
+        height: 15vh;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    .logo{
+        width: 160px;
+        cursor: pointer;
+    }
+nav{
+    flex: 1;
+    padding-left: 60px;
+    
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.content h1{
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+
+}    
+.content {
+    margin-left: 10%;
+    margin-top: 10%;
+    
+}    
+.content .btn{
+    display: inline-block;
+    background: linear-gradient(45deg,#37393c,#fdff77);
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+
+    color: #fff;
+    box-shadow: 3px 8px 22px rgba(94,28,68,0.15);
+}
+.fw-bold{
+    padding-left: 100px;
+    padding-top: 100px;
+    text-decoration-color: #ffb600;
+
+}
+.para{
+    padding-left: 100px;
+    padding-right: 100px;
+    
+
+}
+.btn{
+    display: inline-block;
+    background: linear-gradient(45deg,#37393c,#fdff77);
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin-left: 100PX;
+    margin-top: 25PX;
+    margin-bottom: 20px;
+    color: #fff;
+    box-shadow: 3px 8px 22px rgba(94,28,68,0.15);
+}
+.text:hover{
+        background-color: #ffb600;
+        transform: scale(1.02);
+        box-shadow: 2px 2px 12px rgba(0,0,0,1),-1px -1px 8px rgba(0,0,0,0.2);
+    }
+.text{
+    transition: all .2s ease-in;
+    cursor: pointer;
+    }
+    .image-grid {
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+  transition: all .2s ease-in;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+
+.image-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-grid-row-2 {
+  grid-row: span 2;
+}
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
+  }
+}
+/* video */
+.container2{
+    width: 80%;
+    margin: 80px auto;
+}
+.row2{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*- Footer common */
+.footer {
+  background-color: #0d0d0d;
+  color: #999;
+}
+
+.footer-main {
+  padding: 80px 0 60px;
+}
+
+.footer .widget-title {
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  margin: 0 0 30px;
+  padding-left: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  border-left: 3px solid #ffb600;
+}
+
+/* Footer about us */
+.footer-logo {
+  margin-bottom: 25px;
+}
+
+/* Footer social */
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social .widget-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -13px;
+}
+.footer-social ul li {
+  display: inline-block;
+}
+.footer-social ul li a i {
+  display: block;
+  font-size: 16px;
+  color: #999;
+  transition: 400ms;
+  padding: 10px 13px;
+}
+.footer-social ul li:hover {
+  color: #fff;
+}
+
+/* Links */
+.footer-widget ul.list-arrow li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 8px 0;
+}
+
+.footer-widget ul.list-arrow li:last-child {
+  border-bottom: 0;
+}
+
+.footer-widget ul.list-arrow li a,
+.footer-widget ul.list-arrow li:before {
+  color: #747474;
+}
+
+.footer-widget ul.list-arrow li:hover a,
+.footer-widget ul.list-arrow li:hover {
+  color: #ffb600;
+}
+
+.working-hours {
+  padding-right: 10px;
+}
+
+.working-hours .text-right {
+  float: right;
+}
+
+/*-- Copyright --*/
+.copyright {
+  background: #ffb600;
+  color: #111;
+  padding: 25px 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.footer-menu ul li {
+  display: inline-block;
+  line-height: 12px;
+  padding-left: 15px;
+}
+
+.footer-menu ul.nav li a {
+  background: none;
+  color: #111;
+  padding: 0;
+}
+
+.footer-menu ul li a:hover {
+  color: #fff;
+}
+
+#back-to-top {
+  right: 40px;
+  top: auto;
+  z-index: 10;
+  display: none;
+}
+#back-to-top .btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+@media (max-width: 767px) {
+  #back-to-top {
+    right: 15px;
+  }
+}
+
+#back-to-top.position-fixed {
+  bottom: 20px;
+}
+
+#back-to-top .btn.btn-primary {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  color: #ffb600;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0;
+}
+@media (max-width: 767px) {
+  #back-to-top .btn.btn-primary {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+  }
+}
+
+#back-to-top .btn.btn-primary:hover {
+  color: #fff;
+}
+
+/*-- Title border --*/
+.main-container .border-left {
+  margin-bottom: 30px;
+}
+
+/*-- Banner --*/
+.banner-area {
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.banner-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 58px;
+  font-weight: 900;
+}
+@media (max-width: 767px) {
+  .banner-title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 575px) {
+  .banner-title {
+    font-size: 32px;
+  }
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.banner-heading {
+  text-align: center;
+}
+
+.breadcrumb {
+  padding: 0;
+  background: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.breadcrumb li a,
+.breadcrumb .breadcrumb-item,
+.breadcrumb li a:focus,
+.breadcrumb li a:hover {
+  color: #fff !important;
+}
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: #fff;
+}
+
+/*-- About us page --*/
+/* Slider pages */
+.page-slider .carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  transform: translateY(-50%);
+  background-color: transparent;
+  text-shadow: none;
+  transition: all 0.25s ease;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+.page-slider .carousel-control.left {
+  left: 0;
+}
+.page-slider .carousel-control.right {
+  right: 0;
+}
+.page-slider .carousel-control i {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  line-height: 70px;
+  width: 40px;
+  height: 70px;
+  font-size: 22px;
+  border-radius: 0;
+  transition: all 500ms ease;
+}
+.page-slider .carousel-control i:hover {
+  background: #ffb600;
+  color: #fff;
+}
+
+.page-slider.small-bg .item {
+  min-height: 330px;
+  background-size: cover;
+}
+
+.page-slider.small-bg .box-slider-content {
+  left: 20%;
+}
+
+.page-slider.small-bg .box-slider-text {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 5px 20px;
+}
+
+.page-slider.small-bg .box-slide-title {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 900;
+}
+
+/*-- Get a quote page --*/
+.page-quote-form {
+  background: #f2f2f2;
+  padding: 30px 50px 50px;
+}
+
+.get-a-quote-img {
+  margin-bottom: -190px;
+}
+
+/*-- Partners carousel --*/
+.partner-logo {
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.partner-logo img {
+  transition: 350ms;
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
+
+.partner-logo:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+#partners-carousel .partner-logo {
+  border: 0;
+  border-right: 1px solid #eee;
+  padding: 0 15px;
+  margin-top: 20px;
+}
+
+#partners-carousel .partner-logo.last {
+  border-right: 0;
+}
+
+/*-- Team page --*/
+.team-slide .slick-slide {
+  margin-left: 25px;
+  padding-bottom: 60px;
+}
+.team-slide .slick-list {
+  margin-left: -25px;
+}
+.team-slide .carousel-control {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border: 0;
+  background-color: #ddd;
+  height: 37px;
+  width: 37px;
+  border-radius: 4px;
+  transition: 0.3s;
+  z-index: 6;
+}
+.team-slide .carousel-control:hover {
+  background-color: #ffb600;
+  color: #fff;
+}
+.team-slide .carousel-control.left {
+  transform: translateX(calc(-50% - 25px));
+}
+.team-slide .carousel-control.right {
+  transform: translateX(calc(-50% + 25px));
+}
+.team-slide .carousel-control.slick-disabled {
+  opacity: 0.4;
+}
+.team-slide .carousel-control.slick-disabled:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.ts-team-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.ts-team-wrapper .ts-team-content {
+  position: absolute;
+  top: 76%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px 25px;
+  margin-top: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 350ms;
+}
+@media (max-width: 1200px) {
+  .ts-team-wrapper .ts-team-content {
+    top: 72%;
+  }
+}
+@media (max-width: 575px) {
+  .ts-team-wrapper .ts-team-content {
+    text-align: center;
+  }
+}
+.ts-team-wrapper .ts-name {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 3px;
+  line-height: normal;
+  color: #ffb600;
+}
+.ts-team-wrapper .ts-designation {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.ts-team-wrapper .team-social-icons a i {
+  color: #fff;
+  margin-right: 8px;
+  text-align: center;
+  transition: 400ms;
+}
+.ts-team-wrapper .team-social-icons a i:hover {
+  color: #ffb600;
+}
+.ts-team-wrapper:hover .ts-team-content {
+  top: 0;
+  padding-top: 50px;
+}
+
+/* Team Classic */
+.ts-team-content-classic {
+  margin-top: 15px;
+}
+.ts-team-content-classic .ts-name {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #212121;
+}
+.ts-team-content-classic .ts-designation {
+  color: #888;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.ts-team-content-classic .team-social-icons a i {
+  color: #999;
+}
+.ts-team-content-classic .team-social-icons a i:hover {
+  color: #ffb600;
+}
+
+/*-- Pricing table  --*/
+.ts-pricing-box {
+  margin: 20px 0;
+  padding: 0;
+  text-align: center;
+  background: #f9f9f9;
+}
+.ts-pricing-box .ts-pricing-header {
+  background: #252525;
+  color: #fff;
+  position: relative;
+  padding: 30px 20px;
+}
+.ts-pricing-box .ts-pricing-name {
+  font-size: 18px;
+  line-height: normal;
+  margin: 0 0 5px 0;
+  color: #fff;
+}
+.ts-pricing-box .ts-pricing-price {
+  font-size: 44px;
+  color: #fff;
+  margin: 15px 0 0;
+  display: inline-block;
+}
+.ts-pricing-box .ts-pricing-price > small {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  margin-top: 15px;
+  color: #fff;
+}
+.ts-pricing-box .ts-pricing-features {
+  padding: 15px 0;
+}
+.ts-pricing-box .ts-pricing-features ul {
+  padding: 0 20px;
+}
+.ts-pricing-box .ts-pricing-features ul > li {
+  padding: 20px 0;
+  border-top: 1px dotted #e5e5e5;
+}
+.ts-pricing-box .ts-pricing-features ul > li:first-child {
+  border-top: 0;
+}
+.ts-pricing-box .plan-action {
+  padding-bottom: 40px;
+}
+
+/* Pricing featured */
+.ts-pricing-box.ts-pricing-featured .ts-pricing-header {
+  background: #ff9800;
+}
+
+/* Contact Us
+================================================== */
+.map {
+  height: 450px;
+  z-index: 1;
+}
+
+.contact-info-box {
+  margin-top: 20px;
+}
+
+.contact-info-box i {
+  float: left;
+  font-size: 24px;
+  color: #ffb600;
+}
+
+.contact-info-box-content {
+  padding-left: 40px;
+}
+
+.contact-info-box-content h4 {
+  font-size: 16px;
+  margin-top: 0;
+  line-height: normal;
+  font-weight: 700;
+}
+
+.contact-info-box-content p {
+  margin-bottom: 0;
+}
+
+label {
+  font-weight: 400;
+}
+
+/* Contact page 2 */
+.ts-service-box.text-center .ts-service-icon.icon-squre i {
+  float: none;
+  margin-bottom: 20px;
+}
+
+.ts-service-box.text-center .ts-service-box-content {
+  margin: 0;
+}
+
+/* News Listing
+================================================== */
+.post {
+  border-bottom: 1px solid #dadada;
+  padding: 0 0 30px;
+  margin: 0 0 45px;
+}
+
+.post.last {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.post-body {
+  padding: 20px 0;
+}
+
+.entry-header .entry-title {
+  font-size: 24px;
+  margin: 5px 0 15px;
+  position: relative;
+  line-height: 34px;
+  text-transform: capitalize;
+}
+
+.entry-header .entry-title a {
+  color: #303030;
+}
+
+.entry-header .entry-title a:hover {
+  color: #ffb600;
+}
+
+.post-single .entry-header .entry-title {
+  font-size: 28px;
+}
+
+/* Meta */
+.post-meta {
+  padding-bottom: 10px;
+}
+
+.post-meta a {
+  color: #303030;
+}
+
+.post-meta a:hover {
+  color: #ffb600;
+}
+
+.post-meta span {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #dadada;
+  line-height: 12px;
+  display: inline-block;
+}
+
+.post-meta i {
+  color: #bbb;
+  margin-right: 3px;
+}
+
+.post-meta .post-comment {
+  border-right: 0;
+}
+
+.post-meta .post-comment .comments-link {
+  margin-left: 5px;
+}
+
+.post-footer .btn.btn-primary {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Pagination */
+.paging {
+  margin-bottom: -5px;
+}
+
+.pagination li a {
+  border-radius: 0 !important;
+  margin-right: 8px;
+  color: #7c7c7c;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > li > a:hover {
+  color: #fff;
+  background: #ffb600;
+  border: 1px solid transparent;
+}
+
+/* News Single
+================================================== */
+.tags-area {
+  margin: 20px 0;
+}
+
+.post-tags a {
+  border: 1px solid #dadada;
+  color: #7c7c7c;
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 10px;
+  margin-left: 3px;
+}
+
+.post-tags a:hover {
+  background: #ffb600;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+/* Post social */
+.post-social-icons > li {
+  display: inline-block;
+}
+
+.post-social-icons a i {
+  margin-left: 5px;
+  font-size: 12px;
+  width: 28px;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  text-align: center;
+}
+
+.post-social-icons a i.fa-facebook-f {
+  background: #41578a;
+}
+
+.post-social-icons a i.fa-twitter {
+  background: #64bae2;
+}
+
+.post-social-icons a i.fa-google-plus {
+  background: #c0343d;
+}
+
+.post-social-icons a i.fa-linkedin {
+  background: #3397b6;
+}
+
+/* Author box */
+.author-box {
+  border: 1px solid #dadada;
+  padding: 20px 20px 15px;
+  margin: 20px 0;
+}
+
+.author-img img {
+  width: 110px;
+  height: 110px;
+  margin-right: 30px;
+}
+
+.author-info h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.author-info h3 span {
+  font-size: 12px;
+  color: #999;
+  border-left: 1px solid #AFAFAF;
+  padding-left: 10px;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+/* Comments area */
+.comments-area {
+  margin: 40px 0;
+}
+
+.comments-list .comment-content {
+  margin: 15px 0;
+}
+
+.comments-list .comment-reply {
+  color: #303030;
+  font-weight: 400;
+}
+
+.comments-list .comment-reply:hover {
+  color: #ffb600;
+}
+
+.comments-counter {
+  font-size: 18px;
+}
+
+.comments-counter a {
+  color: #323232;
+}
+
+.comments-list {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.comments-list .comment {
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.comments-list .comment.last {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.comments-list img.comment-avatar {
+  width: 84px;
+  height: 84px;
+  margin-right: 30px;
+}
+@media (max-width: 575px) {
+  .comments-list img.comment-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+  }
+}
+
+.comments-list .comment-author {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: #303030;
+}
+
+.comments-list .comment-date {
+  color: #959595;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+@media (max-width: 575px) {
+  .comments-list .comment-date {
+    float: none !important;
+    display: inline-block;
+  }
+}
+
+.comments-reply {
+  list-style: none;
+  margin: 0 0 0 70px;
+}
+@media (max-width: 767px) {
+  .comments-reply {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.comments-form {
+  margin-bottom: 0;
+}
+
+.comments-form .title-normal {
+  margin-bottom: 20px;
+}
+
+.comments-form .btn.btn-primary {
+  margin-top: 20px;
+}
+
+/* Sidebar
+================================================== */
+.sidebar .widget-title {
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  margin: 0 0 30px;
+  padding-left: 15px;
+  text-transform: uppercase;
+  border-left: 3px solid #ffb600;
+}
+
+/* Widget common */
+.sidebar .widget {
+  margin-bottom: 40px;
+}
+
+.sidebar-left .widget {
+  margin-right: 20px;
+}
+
+.sidebar-right .widget {
+  margin-left: 20px;
+}
+
+.sidebar .widget.box {
+  padding: 25px;
+}
+
+.widget.box.solid {
+  background: #f2f2f2;
+}
+
+.widget.box.red {
+  background: #ec483b;
+  color: #fff;
+}
+
+.widget.box.red .widget-title {
+  color: #fff;
+}
+
+.widget ul li {
+  line-height: 30px;
+}
+
+.sidebar .widget ul li a {
+  color: #303030;
+}
+
+.sidebar .widget ul li a:hover {
+  color: #ffb600;
+}
+
+.sidebar .widget ul li i {
+  margin-right: 5px;
+}
+
+.sidebar .btn {
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 15px;
+  padding: 10px 25px;
+}
+
+/* Sidebar nav */
+.sidebar ul.nav-tabs {
+  border: 0;
+}
+
+.sidebar ul.nav-tabs li {
+  width: 100%;
+}
+.sidebar ul.nav-tabs li a {
+  color: #303030;
+  border-radius: 0;
+  padding: 15px 0;
+  padding-left: 0;
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  transition: 400ms;
+}
+
+.sidebar ul.nav-tabs li.active a,
+.sidebar ul.nav-tabs li:hover a {
+  color: #ffb600;
+}
+
+.sidebar ul.nav-tabs li {
+  color: #303030;
+  line-height: normal;
+}
+
+.sidebar ul.nav-tabs li:last-child a {
+  border-bottom: 0;
+}
+
+/* Service menu */
+.sidebar ul.service-menu li {
+  width: 100%;
+}
+.sidebar ul.service-menu li a {
+  background-color: #f4f4f4;
+  padding: 15px 20px;
+  border: 0;
+  margin-bottom: 8px;
+  position: relative;
+  transition: 400ms;
+  display: block;
+}
+.sidebar ul.service-menu li.active a, .sidebar ul.service-menu li:hover a {
+  background: #ffb600;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+/* Widget tags */
+.widget-tags ul > li {
+  float: left;
+  margin: 3px;
+}
+
+.sidebar .widget-tags ul > li a {
+  border: 1px solid #dadada;
+  color: #303030;
+  display: block;
+  font-size: 14px;
+  padding: 3px 15px;
+  transition: all 0.3s ease 0s;
+}
+
+.sidebar .widget-tags ul > li a:hover {
+  background: #ffb600;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+/* Error page
+================================================== */
+.error-page .error-code h2 {
+  display: block;
+  font-size: 200px;
+  line-height: 200px;
+  color: #303030;
+  margin-bottom: 20px;
+}
+
+.error-page .error-body .btn {
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+</style>
+<div class="m-3">
+<body>
+    <div class="container1">
+        <div class="navbar">
+            <img src="{% static 'images/logo1.png' %} " class="logo">
+            <nav>
+            <ul>
+                <li><a href="index">Home</a></li>
+                <li><a href="">Internship</a></li>
+
+            </ul>
+        </nav>
+        </div>
+        <div class="content">
+            <h1>Student Internship Programme</h1>
+            <a href="" class="btn">HOME</a>
+        </div>
+        
+    </div>
+    <div class="container">
+    <div class="text">
+        <h3 class="fw-bold"><u>GOOGLE RATED NUMBER 1 CIVIL ENGINEERING COMPANY</u></h3>
+        <p class="para">SQ Engineering Contractors Pvt Ltd. offers, Internship for civil engineering students . Internship provides you an in-depth knowledge on civil department students. This internship enables the students to understand and learn the current trend in the job market. Internship provides great opportunity to get real life experience and exposure. Students will  prefer internships to  build their profile for their jobs and also for their higher studies. Based on performance, our company provides best offers for interns.</p>
+        <a href="" class="btn">LEARN MORE</a>
+
+    </div>
+
+    <div class="text">
+        <h3 class="fw-bold"><u>TRAINING SYLLABUS</u></h3>
+        <ul class="lu">
+            <li><p class="para">Onsite Training & Site Execution – Road Works, Retaining & River Protection Wall, Underwater Construction, Heritage Works, Interior Designing & Commissioning, Onsite Safety Measures & <br>Precautions, Equipments Needed and Waterbodies & Geotextile Works</p></li><br>
+            <li><p class="para">Office Procedures & Documentation – Estimation & Billing, Central & State Govt BOQ Preparation, Online Tendering Process, Quantity Surveying & Material Calculations, Labours & <br>Subcontractors Controlling and Necessary Accounting & GST Bill Preparation</p></li><br>
+            <li><p class="para">Basic Tools in Auto CAD</p></li><br>
+            <li><p class="para">KMBR & KPBR Basics</p></li><br>
+            <li><p class="para">Introduction to Construction Materials & Chemicals – Construction Material Testing</p></li><br>
+
+        </ul>
+
+    </div>
+    <div class="text">
+        <h3 class="fw-bold"><u>COLLEGES PARTICIPATED IN OUR STUDENT INTERNSHIP PROGRAMME</u></h3>
+        <ol type="1">
+            <li><p class="para">SSM Polytechnic College, Tirur</p>
+                <li><p class="para">Govt. Polytechnic College, Nattakom</p>
+                    <li><p class="para">Maria Polytechnic College, Marthandam</p>
+                        <li><p class="para">Toc H Institute of Science & Technology, Arakkunnam</p>
+                            <li><p class="para">Noorul Islam Centre for Higher Education, Nagercoil</p>
+                                <li><p class="para">Federal Institute of Science and Technology, Angamaly</p>
+                                    <li><p class="para">Dr. N G P Institute of Technology, Coimbatore</p>
+                                        <li><p class="para">KMCT Polytechnic College, Kozhikode</p>
+                                        <li><p class="para">Mount Zion College of Engineering, Pathanamthitta</p>
+                                    <li><p class="para">Rajagiri School of Engineering and Technology, Ernakulam</p>
+                                <li><p class="para">Marian Engineering College, Thiruvanathapuram</p>
+                            <li><p class="para">Sreepathy Institute of Management and Technology, Palakkad</p>
+                        <li><p class="para">Matha College of Technology, North Paravur</p>
+                    <li><p class="para">Sree Narayana Guru College of Engineering and Technology, Payyanur, Kannur</p>
+                <li><p class="para">Kongu Engineering College, Erode, Tamil Nadu</p>
+                                    
+
+
+        </ol>
+        <a href="" class="btn">GOOGLE REVIEW AND RATING</a>
+        
+
+    </div> 
+    <div class="text">
+        <h3 class="fw-bold"><u>GALLERY - INTERNSHIP TRAINING FOR STUDENTS OF KONGU ENGINEERING COLLEGE</u></h3>
+        <div class="image-grid">
+            <img class="image-grid-col-2 image-grid-row-2" src="https://civil-construction.com/wp-content/uploads/2014/01/whse-roof-repair-4-300x272.jpg" alt="nature">
+            <img src="https://sqgallery.com/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-12-at-10.48.41-AM.jpeg" alt="architecture">
+            <img src="https://sqgallery.com/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-12-at-10.48.48-AM.jpeg" alt="architecture">
+            <img src="https://sqgallery.com/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-12-at-10.48.46-AM.jpeg" alt="architecture">
+            <img src="https://civil-construction.com/wp-content/uploads/2014/01/SD530443-300x272.jpg" alt="architecture">
+          </div>
+        <a href="" class="btn">LEARN MORE</a>
+</div> 
+<div class="container2">
+    <div class="row2">
+        <div class="feature-img2">
+            <img src="" width="100%">
+        </div>
+    </div>
+</div> 
+
+<footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">FIND US</h3>
+            <p><i class="fas fa-home" style="color: #ffb600;"></i> &nbsp;&nbsp; SQ Engineering Contractors P Ltd., XI/105-C1, &nbsp;&nbsp;&nbsp;&nbsp;Civil Lane Road, Kochi</p>
+            <p><i class="fas fa-mail-bulk" style="color: #ffb600;"></i> &nbsp;&nbsp; sqenquiry2021@gmail.com</p>
+            <p><i class="fa fa-mobile-phone" style="color: #ffb600;"></i> &nbsp;&nbsp; +91 484 4063630 OR +91 98473 90086</p>
+            
+            <div class="footer-social">
+              <ul>
+                
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+            <h3 class="widget-title">MENU</h3>
+            <ul class="list-arrow">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Civil Works</a></li>
+              <li><a href="#">Construction Chemicals</a></li>
+              <li><a href="#">Our Clients</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+          <button class="btn btn-primary" title="Back to Top">
+            <i class="fa fa-angle-double-up"></i>
+          </button>
+        </div>
+        <div class="copy" style="color: #fff;">
+          <p>Copyright © 2022 by SQEC Pvt. Ltd. All rights reserved.</p>
+        </div>
+    
+</body>
+</html>
+
+    
+
+
+
+    
